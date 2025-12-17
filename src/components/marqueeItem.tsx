@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
+import { GlassView } from 'expo-glass-effect';
 
 type MarqueeItemProps = {
   title: string;
@@ -8,7 +9,9 @@ type MarqueeItemProps = {
 
 export default function MarqueeItem({ title, imageUri }: MarqueeItemProps) {
   return (
-    <View style={styles.card}>
+    <GlassView 
+      glassEffectStyle="clear"
+      style={styles.card}>
       <View style={styles.row}>
         <View style={styles.left}>
           <Image source={{ uri: imageUri }} style={styles.avatar} />
@@ -20,7 +23,7 @@ export default function MarqueeItem({ title, imageUri }: MarqueeItemProps) {
           </Text>
         </View>
       </View>
-    </View>
+    </GlassView>
   );
 }
 
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
     height: 64,
     borderRadius: 14,
     paddingHorizontal: 12,
-    backgroundColor: "black",
+
     justifyContent: "center",
   },
   row: {
@@ -45,7 +48,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#0B1220",
+    backgroundColor: "#fff",
   },
   avatar: {
     width: 40,
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
     flexShrink: 1,
   },
   title: {
-    color: "white",
+    color: "black",
     fontSize: 14,
     fontWeight: "700",
   },

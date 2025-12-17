@@ -2,6 +2,8 @@ import { Text, View } from "react-native";
 
 import MarqueeItem from "../components/marqueeItem";
 
+import {GlassView} from 'expo-glass-effect';
+
 export default function Index() {
   return (
     <View
@@ -15,13 +17,13 @@ export default function Index() {
 
       <View style={{ height: 100 }}></View>
 
-      <View
+      <GlassView
+        glassEffectStyle="clear"
         style={{
           width: "100%",
           alignItems: "center",
           justifyContent: "center",
           height: 100,
-          backgroundColor: "grey",
           flexDirection: "row",
           gap: 12,
         }}
@@ -35,7 +37,7 @@ export default function Index() {
           title="Motion"
           imageUri="https://www.framer.com/motion/favicon.ico"
         />
-      </View>
+      </GlassView>
     </View>
   );
 }
