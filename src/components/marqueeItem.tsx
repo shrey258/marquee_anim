@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import { GlassView } from 'expo-glass-effect';
+import { GlassView } from "expo-glass-effect";
 
 type MarqueeItemProps = {
   title: string;
@@ -9,9 +9,7 @@ type MarqueeItemProps = {
 
 export default function MarqueeItem({ title, imageUri }: MarqueeItemProps) {
   return (
-    <GlassView 
-      glassEffectStyle="clear"
-      style={styles.card}>
+    <GlassView glassEffectStyle="clear" style={styles.card}>
       <View style={styles.row}>
         <View style={styles.left}>
           <Image source={{ uri: imageUri }} style={styles.avatar} />

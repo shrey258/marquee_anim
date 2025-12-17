@@ -2,7 +2,23 @@ import { Text, View } from "react-native";
 
 import MarqueeItem from "../components/marqueeItem";
 
-import {GlassView} from 'expo-glass-effect';
+import { GlassView } from "expo-glass-effect";
+
+function Marquee() {
+  return (
+    <View style={{ flexDirection: "row", gap: 20 }}>
+      <MarqueeItem title="Linear" imageUri="https://linear.app/favicon.ico" />
+      <MarqueeItem
+        title="Vercel"
+        imageUri="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png"
+      />
+      <MarqueeItem
+        title="Motion"
+        imageUri="https://www.framer.com/motion/favicon.ico"
+      />
+    </View>
+  );
+}
 
 export default function Index() {
   return (
@@ -19,6 +35,7 @@ export default function Index() {
 
       <GlassView
         glassEffectStyle="clear"
+        isInteractive={true}
         style={{
           width: "100%",
           alignItems: "center",
@@ -28,15 +45,8 @@ export default function Index() {
           gap: 12,
         }}
       >
-        <MarqueeItem title="Linear" imageUri="https://linear.app/favicon.ico" />
-        <MarqueeItem
-          title="Vercel"
-          imageUri="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png"
-        />
-        <MarqueeItem
-          title="Motion"
-          imageUri="https://www.framer.com/motion/favicon.ico"
-        />
+        <Marquee />
+        <Marquee />
       </GlassView>
     </View>
   );
